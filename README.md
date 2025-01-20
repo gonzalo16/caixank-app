@@ -1,9 +1,9 @@
 # BankingApp
 <img src="https://github.com/gonzalo16/BankingApp/blob/main/Backend.png"></img>
 <div align="center">
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original-wordmark.svg" height="45" alt="spring logo"  />
+  <img src="https://img.shields.io/badge/spring-%236DB33F.svg?style=flat&logo=spring&logoColor=white" height="25" alt="spring logo"  />
   <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original-wordmark.svg" height="45" alt="mysql logo"  />
+  <img src="https://img.shields.io/badge/mysql-4479A1.svg?style=flat&logo=mysql&logoColor=white" height="25" alt="mysql logo"  />
 </div>
 
 
