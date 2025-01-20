@@ -16,3 +16,11 @@ Debido a que actualmente estoy realizando un curso presencial de SAP, voy realiz
 Este es mi primer repositorio "serio" que quiero crear y mantenerlo mediante las actualizaciones que vaya haciendo al proyecto/desafio y documentandolo de la mejor manera posible.
 
 ## Background
+
+
+## Tareas 📝
+- Tarea 1: Crear un dockerfile y health check.
+- Tarea 2: Acciones de usuario.
+- Tarea 3: Transacciones de cuentas, monitoreo y validaciones.
+- Tarea 4: Invertir cuenta.
+- Tarea 5: Seguridad y manejo de errores.
