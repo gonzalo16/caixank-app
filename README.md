@@ -37,6 +37,7 @@ En esta tarea tendremos que crear los distintos endpoints para el registro y log
 | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ |
 | /users/register  | POST  | {name,password,email}  | No  | 200,400("Email already exist") | Register new user |
 | /users/login  | POST  | {id,password}  | No  | 200,401("Bad credentials") | Login user return JWT |
+| /users/logout  | GET  | N/A    | SI  | 200,401("Access denied") | Desloguea el usuario e invalida el JWT |
 | /dashboard/user  | GET  | N/A  | SI  | 200,401("Access denied") | Recupera la informacion del usuario |
 | /dashboard/account  | GET  | N/A  | SI  | 200,401("Access denied") | Recupera la informacion principal de la cuenta incluida el balance |
 | /dashboard/account/{index}  | GET  | {index} | SI  | 200,401,404 | Recupera la informacion principal de la cuenta pasada por parametro |
