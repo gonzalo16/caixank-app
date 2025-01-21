@@ -16,7 +16,7 @@ Debido a que actualmente estoy realizando un curso presencial de SAP, voy realiz
 Este es mi primer repositorio "serio" que quiero crear y mantenerlo mediante las actualizaciones que vaya haciendo al proyecto/desafio y documentandolo de la mejor manera posible.
 
 ## Background
-Las finanzas digitales evolucionan, CaixaBank se dedica a ampliar los límites de las soluciones bancarias seguras e innovadoras.  En este desafío, usted asume el papel de desarrollador encargado de crear funciones esenciales para una aplicación de servicios financieros.
+Las finanzas digitales evolucionan, CaixaBank se dedica a ampliar los límites de las soluciones bancarias seguras e innovadoras.  En este desafío, usted asume el papel de desarrollador encargado de crear funciones esenciales para una aplicación de servicios financieros, centrándose en la implementación práctica de una sólida gestión de cuentas, seguridad de las transacciones y eficiencia operativa.
 
 
 ## Tareas 📝
