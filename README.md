@@ -27,6 +27,15 @@ Las finanzas digitales evolucionan, CaixaBank se dedica a ampliar los límites d
 - Tarea 5: Seguridad y manejo de errores.
 
 
-## Tarea 1: Crear un dockerfile y comprobar estado de salud.
+## Tarea 1: Crear un dockerfile y comprobar estado de salud. 🕘
 La primera cosa es configurar un archivo Dockerfile para poder probar el contenedor de la aplicación.
 **Health check** es un endpoint para la verificación del estado de salud del contenedor Docker.
+
+## Tarea 2: Acciones de usuario.
+En esta tarea tendremos que crear los distintos endpoints para el registro y login del usuario, en la siguiente tabla se muestran los protocolos, parametros y respuesta de los endpoints.
+
+|  Endpoint | Method  | Params/body  | Requi auth  | Resp cod  | Desc     |
+| ------------ | ------------ | ------------ | ------------ | ------------ | ------------ |
+| /users/register  | POST  | {name,password,email}  | No  | 200,400("Email already exist") | Register new user  |
+| /users/login  | POST  | {id,password}  | No  | 200,401("Bad credentials") | Login user return JWT  |
+| /dashboard/user  | GET  | N/A  | SI  | 200,401("Access denied") | Recupera la informacion del usuario  |
