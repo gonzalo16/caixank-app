@@ -33,15 +33,15 @@ La primera cosa es configurar un archivo Dockerfile para poder probar el contene
 ## Tarea 2: Acciones de usuario.
 En esta tarea tendremos que crear los distintos endpoints para el registro y login del usuario, en la siguiente tabla se muestran los protocolos, parametros y respuesta de los endpoints.
 
-|  **Endpoint** | **Method**  | **Params/body**  | **Requi auth**  | **Resp cod**  | **Desc**     |
-| ------------ | ------------ | ------------ | ------------ | ------------ | ------------ |
-| /users/register  | POST  | {name,password,email}  | No  | 200,400("Email already exist") | Register new user |
-| /users/login  | POST  | {id,password}  | No  | 200,401("Bad credentials") | Login user return JWT |
-| /users/logout  | GET  | N/A    | SI  | 200,401("Access denied") | Desloguea el usuario e invalida el JWT |
-| /dashboard/user  | GET  | N/A  | SI  | 200,401("Access denied") | Recupera la informacion del usuario |
-| /dashboard/account  | GET  | N/A  | SI  | 200,401("Access denied") | Recupera la informacion principal de la cuenta incluida el balance |
-| /dashboard/account/{index}  | GET  | {index} | SI  | 200,401,404 | Recupera la informacion principal de la cuenta pasada por parametro |
-| /account/create | POST  | {accountNumber,accountType} | SI  | 200,400 | Crea una nueva cuenta para el usuario usando el numero de cuenta principal y el tipo de cuenta |
-| /account/deposit  | POST  | {amount}  | SI  | 200,401("Access denied") | Deposita una cantidad específica en la cuenta del usuario con las tarifas aplicables |
-| /account/withdraw  | POST  | {amount}  | SI  | 200,401("Access denied") | Retira una cantidad específica a la cuenta del usuario con las tarifas aplicables |
-| /account/fund-transfer  | POST  | {targetAccountNumber}  | SI  | 200,401("Access denied") | Transfiere fondos a otra cuenta, con detección de fraude si corresponde |
+|  **Endpoint** | **Method**  | **Params/body**  | **Requi auth**  | **Resp cod**  | **Desc**  | **State** |  
+| ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ |
+| /users/register  | POST  | {name,password,email}  | No  | 200,400("Email already exist") | Register new user | ✅
+| /users/login  | POST  | {id,password}  | No  | 200,401("Bad credentials") | Login user return JWT | ✅
+| /users/logout  | GET  | N/A    | SI  | 200,401("Access denied") | Desloguea el usuario e invalida el JWT | 🕘
+| /dashboard/user  | GET  | N/A  | SI  | 200,401("Access denied") | Recupera la informacion del usuario | 🕘
+| /dashboard/account  | GET  | N/A  | SI  | 200,401("Access denied") | Recupera la informacion principal de la cuenta incluida el balance | 🕘
+| /dashboard/account/{index}  | GET  | {index} | SI  | 200,401,404 | Recupera la informacion principal de la cuenta pasada por parametro | 🕘
+| /account/create | POST  | {accountNumber,accountType} | SI  | 200,400 | Crea una nueva cuenta para el usuario usando el numero de cuenta principal y el tipo de cuenta | 🕘
+| /account/deposit  | POST  | {amount}  | SI  | 200,401("Access denied") | Deposita una cantidad específica en la cuenta del usuario con las tarifas aplicables | 🕘
+| /account/withdraw  | POST  | {amount}  | SI  | 200,401("Access denied") | Retira una cantidad específica a la cuenta del usuario con las tarifas aplicables | 🕘
+| /account/fund-transfer  | POST  | {targetAccountNumber}  | SI  | 200,401("Access denied") | Transfiere fondos a otra cuenta, con detección de fraude si corresponde | 🕘
