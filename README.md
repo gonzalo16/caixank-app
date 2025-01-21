@@ -7,7 +7,6 @@
 </div>
 
 
-
 Este repositorio forma parte de un proyecto de un desafío de <a href="https://nuwe.io/">NUWE<a/> en crear una aplicación financiera del banco CaixaBank usando Spring.
 Quiero destacar que el desafío finalizó el 09/01/2025 , yo en mi caso me tomé el desafio como una forma de aprender y practicar conocimientos en desarrollo backend y con el framework Spring.
 
@@ -36,6 +35,8 @@ En esta tarea tendremos que crear los distintos endpoints para el registro y log
 
 |  **Endpoint** | **Method**  | **Params/body**  | **Requi auth**  | **Resp cod**  | **Desc**     |
 | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ |
-| /users/register  | POST  | {name,password,email}  | No  | 200,400("Email already exist") | Register new user  |
-| /users/login  | POST  | {id,password}  | No  | 200,401("Bad credentials") | Login user return JWT  |
-| /dashboard/user  | GET  | N/A  | SI  | 200,401("Access denied") | Recupera la informacion del usuario  |
+| /users/register  | POST  | {name,password,email}  | No  | 200,400("Email already exist") | Register new user |
+| /users/login  | POST  | {id,password}  | No  | 200,401("Bad credentials") | Login user return JWT |
+| /dashboard/user  | GET  | N/A  | SI  | 200,401("Access denied") | Recupera la informacion del usuario |
+| /dashboard/account  | GET  | N/A  | SI  | 200,401("Access denied") | Recupera la informacion principal de la cuenta incluida el balance |
+| /dashboard/account/{index}  | GET  | {index} | SI  | 200,401,404 | Recupera la informacion principal de la cuenta pasada por parametro |
