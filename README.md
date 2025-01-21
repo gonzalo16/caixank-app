@@ -40,3 +40,4 @@ En esta tarea tendremos que crear los distintos endpoints para el registro y log
 | /dashboard/user  | GET  | N/A  | SI  | 200,401("Access denied") | Recupera la informacion del usuario |
 | /dashboard/account  | GET  | N/A  | SI  | 200,401("Access denied") | Recupera la informacion principal de la cuenta incluida el balance |
 | /dashboard/account/{index}  | GET  | {index} | SI  | 200,401,404 | Recupera la informacion principal de la cuenta pasada por parametro |
+| /account/create | POST  | {accountNumber,accountType} | SI  | 200,400 | Crea una nueva cuenta para el usuario usando el numero de cuenta principal y el tipo de cuenta |
