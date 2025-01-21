@@ -25,3 +25,8 @@ Las finanzas digitales evolucionan, CaixaBank se dedica a ampliar los límites d
 - Tarea 3: Transacciones de cuentas, monitoreo y validaciones.
 - Tarea 4: Invertir cuenta.
 - Tarea 5: Seguridad y manejo de errores.
+
+
+## Tarea 1: Crear un dockerfile y comprobar estado de salud.
+La primera cosa es configurar un archivo Dockerfile para poder probar el contenedor de la aplicación.
+**Health check** es un endpoint para la verificación del estado de salud del contenedor Docker.
