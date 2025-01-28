@@ -49,3 +49,5 @@ En esta tarea tendremos que crear los distintos endpoints para el registro y log
 
 ## Tarea 3: Transacciones monitoreo y validaciones.
 La tarea implica implementar transacciones financieras básicas como depósitos, retiros y transferencias de fondos. Además, incluye visualización del historial de acciones, monitoreo de transacciones, reglas antifraude y tarifas bancarias correspondientes a transacciones.
+
+Las transacciones deben marcarse como <b>pendientes</b> de forma predeterminada hasta que la herramienta de monitoreo las haya verificado y validado. Una vez validadas, las acciones aparecerán como aprobadas. Si se detecta fraude, las transacciones se marcarán como fraude.
