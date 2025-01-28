@@ -45,3 +45,7 @@ En esta tarea tendremos que crear los distintos endpoints para el registro y log
 | /account/deposit  | POST  | {amount}  | SI  | 200,401("Access denied") | Deposita una cantidad específica en la cuenta del usuario con las tarifas aplicables | 🕘
 | /account/withdraw  | POST  | {amount}  | SI  | 200,401("Access denied") | Retira una cantidad específica a la cuenta del usuario con las tarifas aplicables | 🕘
 | /account/fund-transfer  | POST  | {targetAccountNumber}  | SI  | 200,401("Access denied") | Transfiere fondos a otra cuenta, con detección de fraude si corresponde | 🕘
+
+
+## Tarea 3: Transacciones monitoreo y validaciones.
+La tarea implica implementar transacciones financieras básicas como depósitos, retiros y transferencias de fondos. Además, incluye visualización del historial de acciones, monitoreo de transacciones, reglas antifraude y tarifas bancarias correspondientes a transacciones.
