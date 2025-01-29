@@ -28,6 +28,8 @@ public class Transaction {
 	@ManyToOne
 	private Account account;
 	
+	private Account accountTarget;
+	
 	@Enumerated(EnumType.STRING) 
 	private TransactionStatus transactionStatus;
 }
