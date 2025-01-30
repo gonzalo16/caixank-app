@@ -56,6 +56,7 @@ En cualquier transacción se debe verificar que existan fondos suficientes. Si n
 ### Depositar
 El usuario puede depositar dinero en su cuenta Main, ejemplo.
 <br/>
+
 Request: 
 {
 "amount":"100000.0"
