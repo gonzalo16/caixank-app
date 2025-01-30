@@ -52,4 +52,7 @@ La tarea implica implementar transacciones financieras básicas como depósitos,
 
 Las transacciones deben marcarse como <b>pendientes</b> de forma predeterminada hasta que la herramienta de monitoreo las haya verificado y validado. Una vez validadas, las acciones aparecerán como aprobadas. Si se detecta fraude, las transacciones se marcarán como fraude.
 
-En cualquier transacción se debe verificar que existan fondos suficientes. Si no hay fondos suficientes. el texto debe mostrarse Insuficiente.
+En cualquier transacción se debe verificar que existan fondos suficientes. Si no hay fondos suficientes. el texto debe mostrarse Insuficiente. Las transacciones deben usar <b>JWT</b>.
+### Depositar
+El usuario puede depositar dinero en su cuenta Main, ejemplo.
+Request: 
