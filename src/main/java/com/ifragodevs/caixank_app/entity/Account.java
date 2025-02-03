@@ -38,7 +38,7 @@ public class Account {
 	
 	private Double balance;
 	
-	@OneToMany(mappedBy = "account",cascade = CascadeType.ALL,orphanRemoval = true)
+	@OneToMany(mappedBy = "accountOrigin",cascade = CascadeType.ALL,orphanRemoval = true)
 	@JsonIgnore
 	@Builder.Default
 	private List<Transaction> transactions = new ArrayList<>();

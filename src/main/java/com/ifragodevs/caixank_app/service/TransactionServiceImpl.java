@@ -10,7 +10,9 @@ import org.springframework.transaction.annotation.Transactional;
 import com.ifragodevs.caixank_app.entity.Account;
 import com.ifragodevs.caixank_app.entity.Transaction;
 import com.ifragodevs.caixank_app.entity.TransactionStatus;
+import com.ifragodevs.caixank_app.entity.TransactionType;
 import com.ifragodevs.caixank_app.entity.User;
+import com.ifragodevs.caixank_app.exceptions.InvalidTransactionException;
 import com.ifragodevs.caixank_app.repository.TransactionRepository;
 
 
@@ -29,9 +31,23 @@ public class TransactionServiceImpl implements TransactionService{
 	private AccountService accountService;
 		
 	@Override
-	public Transaction save(Transaction t) {
-
-		return transactionRepository.save(t);
+	public Transaction save(Account account,Double mount) {
+		if(mount == null || mount < 0) {
+			throw new InvalidTransactionException("El monto debe ser mayor que cero");
+		}
+		Double balance = account.getBalance();
+		Double balanceFee = applyFee(mount);
+		account.setBalance(balanceFee + balance);
+		
+		Transaction newTransaction = Transaction.builder()
+				.amount(balanceFee)
+				.accountOrigin(account)
+				.transactionType(TransactionType.CASH_DEPOSIT)
+				.transactionStatus(TransactionStatus.PENDING)
+				.build();
+		account.addTransaction(newTransaction);
+		
+		return transactionRepository.save(newTransaction);
 	}
 	
 	@Override
@@ -59,12 +75,48 @@ public class TransactionServiceImpl implements TransactionService{
 			//Guardamos en la base de datos la transaccion
 			Transaction newTransaction = Transaction.builder()
 					.amount(mount)
-					.account(accountUser.get())
+					.accountOrigin(accountUser.get())
 					.transactionStatus(TransactionStatus.PENDING)
 					.build();
 			accountUser.get().addTransaction(newTransaction);
 			transactionRepository.save(newTransaction);
 		}
 		
+	}
+
+	@Override
+	@Transactional
+	public void fundTransfer(Double mount,Account accountOrigin, Account accountNumberTarget) {
+		if(mount == null || mount < 0) {
+			throw new InvalidTransactionException("El monto debe ser mayor que cero");
+		}
+		
+		Transaction newTransaction = null;
+		newTransaction = Transaction.builder()
+				.accountDestiny(accountNumberTarget)
+				.accountOrigin(accountOrigin)
+				.transactionType(TransactionType.CASH_TRANSFER)
+				.amount(mount)
+				.build();
+		
+		accountOrigin.setBalance(accountOrigin.getBalance() - mount);
+		
+		
+		accountNumberTarget.setBalance(accountNumberTarget.getBalance() + mount);
+		//update
+		
+		
+		
+		if(mount > 80000) {				
+			newTransaction.setTransactionStatus(TransactionStatus.FRAUD);		
+		}else {
+			newTransaction.setTransactionStatus(TransactionStatus.APPROVED);
+		}
+		
+		
+		//Podemos hacer un update
+		accountService.save(accountOrigin);
+		accountService.save(accountNumberTarget);
+		transactionRepository.save(newTransaction);
 	}
 }

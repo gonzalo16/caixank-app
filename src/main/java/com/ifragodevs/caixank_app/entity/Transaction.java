@@ -6,6 +6,7 @@ import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -26,10 +27,17 @@ public class Transaction {
 	private Double amount;
 	
 	@ManyToOne
-	private Account account;
+	@JoinColumn(name = "cuenta_origen_id")
+	private Account accountOrigin;
 	
-	private Account accountTarget;
+	@ManyToOne
+	@JoinColumn(name = "cuenta_destino_id")
+	private Account accountDestiny;
 	
+		
 	@Enumerated(EnumType.STRING) 
 	private TransactionStatus transactionStatus;
+	
+	@Enumerated(EnumType.STRING)
+	private TransactionType transactionType;
 }

@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.ifragodevs.caixank_app.auth.AuthResponse;
 import com.ifragodevs.caixank_app.dto.LoginDTO;
 import com.ifragodevs.caixank_app.dto.RegisterDTO;
 import com.ifragodevs.caixank_app.service.AuthService;
@@ -36,8 +35,12 @@ public class AuthController {
     }
 	
 	@PostMapping(value = "login")
-    public ResponseEntity<AuthResponse> login(@RequestBody LoginDTO request)
+    public ResponseEntity<?> login(@Valid @RequestBody LoginDTO request, BindingResult result)
     {
+		if(result.hasFieldErrors()) {
+			return validation(result);
+		}
+		
         return ResponseEntity.ok(authService.login(request));
     }
 	

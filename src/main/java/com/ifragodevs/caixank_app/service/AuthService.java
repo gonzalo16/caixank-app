@@ -4,6 +4,8 @@ import java.util.UUID;
 
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -73,5 +75,10 @@ public class AuthService {
         return AuthResponse.builder()
             .token(token)
             .build();
+	}
+	
+	public Authentication getAuth() {
+		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+		return authentication;
 	}
 }
