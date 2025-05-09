@@ -1,5 +1,6 @@
 package com.ifragodevs.caixank_app.service;
 
+import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -118,5 +119,10 @@ public class TransactionServiceImpl implements TransactionService{
 		accountService.save(accountOrigin);
 		accountService.save(accountNumberTarget);
 		transactionRepository.save(newTransaction);
+	}
+
+	@Override
+	public List<Transaction> findAll(Account account) {
+		return transactionRepository.findAllByAccountOrigin(account);
 	}
 }

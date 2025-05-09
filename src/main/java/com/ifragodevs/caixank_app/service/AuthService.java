@@ -62,7 +62,7 @@ public class AuthService {
 		return UserResponse.builder()
 				.username(registerDTO.getUsername())
 				.email(registerDTO.getEmail())
-				.hashedPassword(registerDTO.getPassword())
+				.hashedPassword(user.getPassword())
 				.accountNumber(account.getAccountNumber().toString())
 				.accountType("Main")
 				.build();

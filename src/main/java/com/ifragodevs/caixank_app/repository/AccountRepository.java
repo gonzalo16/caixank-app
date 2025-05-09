@@ -14,6 +14,7 @@ public interface AccountRepository extends JpaRepository<Account, Integer>{
 	
 	Optional<Account> findById(Integer id);
 
+	
 	Optional<Account> findByAccountType(String accountType);
 	
 	@Query("SELECT a FROM Account a WHERE a.user.id = :userid AND a.accountType = 'Main'")

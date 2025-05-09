@@ -36,7 +36,7 @@ public class UserServiceImpl implements UserService{
 	@Override
 	public UserResponse getUserInfo(String username) {
 		Optional<User> user = userRepository.findByUsername(username);
-		Optional<Account> mainAccount = accountRepository.findByAccountType("Main");
+		Optional<Account> mainAccount = accountRepository.findMainAcountByUserId(user.get().getId());
 		return UserResponse.builder()
 				.username(username)
 				.email(user.get().getEmail())
